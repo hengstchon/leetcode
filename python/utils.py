@@ -4,6 +4,12 @@ class TreeNode:
         self.left = left
         self.right = right
 
+    def __repr__(self):
+        return str(self.val)
+
+    def __bool__(self):
+        return bool(self.val)
+
 
 def arr_to_tree(arr):
     if not arr:
