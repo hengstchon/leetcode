@@ -23,3 +23,19 @@ def arr_to_tree(arr):
         nodes += [node.left, node.right]
     return root
 
+
+def tree_to_arr(root):
+    arr = [root.val]
+    stack = [root]
+    while stack:
+        node = stack.pop(0)
+        if node.left:
+            arr.append(node.left.val)
+            stack.append(node.left)
+        if not node.left and node.right:
+            arr.append(None)
+        if node.right:
+            arr.append(node.right.val)
+            stack.append(node.right)
+    return arr
+
